@@ -14,8 +14,10 @@ Text in Description is pre-processed by removing unwanted characters and words. 
 
 With this pre-processed description the words in the corpus are tokenized and embeddings were created with word2vec. Embedding was also generated with glove.
 
-Different NLP algorithms were tried out - RNN, LSTM, GRU, Traditional ML algorithms such as RandomForest and SVM were tried out.
+Different NLP algorithms were tried out - BI-LSTM, LSTM,Traditional ML algorithms such as NB were tried out.
 # Limitations
-As part of Data pre-processing, we had grouped all assignment groups with less than 10 entries as one group (misc_grp) which had reduced the Target class from 74 to 50 groups. While applying this model in the real world there could be additional intervention required to classify the tickets if it has been classified as misc_grp by our model. Since the number of elements reported under misc_grp are less, we expect this intervention to be done less often.
-# Conclusion
-Although this model can classify the IT tickets with 91.24% accuracy, to achieve better accuracy in the real world it would be good if the business can collect additional data around 300 records for each group.
+Except Grp_0, other groups are not having enough datapoints, we are not able to derive a model to reach 100% accuracy. Before applying this model into production, either additional datapoints are required from business team or additional manual intervention could help achieve higher accuracy.  
+# Closing Reflection
+Looking at the data points, looks like short description and description fields were manually entered and hence were having data entries with German language or with email addressed, special characters etc. and hence data cleansing becomes a critical task in entire predictability of target group. 
+To avoid this issue of data cleansing, it is recommended to have an unified port for raising such tickets e.g. My Support Portal which helps team to capture right amount of contextual data and ultimately helps NLP model to perform better in classifying ticket to correct group.
+
